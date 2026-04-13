@@ -8,7 +8,7 @@ const TOTAL_SLOTS   = 10;
 const STORAGE_KEY   = 'rsvp_confirmed_count';
 const RSVP_DONE_KEY = 'rsvp_already_submitted'; // prevents duplicate submissions
 const DATA_VERSION    = 'v4_final';
-const CONFIRMED_START = 3;               // bump this string to wipe old test data
+const CONFIRMED_START = 4;               // bump this string to wipe old test data
 
 /* ── Wipe old test data if version changed ── */
 (function clearTestData() {
