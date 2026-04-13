@@ -4,7 +4,7 @@ const EMAILJS_TEMPLATE_GUEST = 'template_jmagriu';
 const EMAILJS_PUBLIC_KEY     = 'n2FvekeI7Y6R5QDb9';
 const HOST_EMAIL             = 'icy.cristy@gmail.com';
 
-const TOTAL_SLOTS   = 10;
+const TOTAL_SLOTS   = 7;
 const STORAGE_KEY   = 'rsvp_confirmed_count';
 const RSVP_DONE_KEY = 'rsvp_already_submitted'; // prevents duplicate submissions
 const DATA_VERSION  = 'v3_final';               // bump this string to wipe old test data
