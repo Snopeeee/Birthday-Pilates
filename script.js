@@ -7,7 +7,7 @@ const HOST_EMAIL             = 'icy.cristy@gmail.com';
 const TOTAL_SLOTS   = 10;
 const STORAGE_KEY   = 'rsvp_confirmed_count';
 const RSVP_DONE_KEY = 'rsvp_already_submitted'; // prevents duplicate submissions
-const DATA_VERSION  = 'v2_final';               // bump this string to wipe old test data
+const DATA_VERSION  = 'v3_final';               // bump this string to wipe old test data
 
 /* ── Wipe old test data if version changed ── */
 (function clearTestData() {
