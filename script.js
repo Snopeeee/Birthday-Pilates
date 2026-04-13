@@ -133,17 +133,20 @@ async function submitRSVP() {
   }
 
   /* 2️⃣ Guest email — no note exposed */
-  try {
-    const res2 = await emailjs.send(
-      EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_GUEST, templateParams, EMAILJS_PUBLIC_KEY
-    );
-    console.log('Guest email OK:', res2.status, res2.text);
-  } catch (err) {
-    console.error('Guest email FAILED:', JSON.stringify(err));
-    btn.textContent = 'Confirm RSVP';
-    btn.disabled = false;
-    alert('Guest confirmation email failed.\n\nError: ' + (err.text || err.message || JSON.stringify(err)));
-    return;
+/* 2️⃣ Guest email — only sent if attending */
+  if (attend === 'yes') {
+    try {
+      const res2 = await emailjs.send(
+        EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_GUEST, templateParams, EMAILJS_PUBLIC_KEY
+      );
+      console.log('Guest email OK:', res2.status, res2.text);
+    } catch (err) {
+      console.error('Guest email FAILED:', JSON.stringify(err));
+      btn.textContent = 'Confirm RSVP';
+      btn.disabled = false;
+      alert('Guest confirmation email failed.\n\nError: ' + (err.text || err.message || JSON.stringify(err)));
+      return;
+    }
   }
 
   /* 3️⃣ Count slot only for confirmed "yes" attendees */
@@ -163,7 +166,6 @@ async function submitRSVP() {
     '<div class="success-icon">✦</div>' +
     '<h3 style="margin-bottom:8px;">RSVP Received!</h3>' +
     '<p class="success-msg">' + messages[attend] + '</p>' +
-    '<p style="font-size:0.75rem; color:#8B1A1A; opacity:0.7; margin-top:10px;">📧 Please check your email to receive the confirmation.</p>' +
-    '<button class="btn-confirm" style="margin-top:18px; width:100%;" ' +
+(attend === 'yes' ? '<p style="font-size:0.75rem; color:#8B1A1A; opacity:0.7; margin-top:10px;">📧 Please check your email to receive the confirmation.</p>' : '') +    '<button class="btn-confirm" style="margin-top:18px; width:100%;" ' +
     'onclick="document.getElementById(\'rsvpModal\').classList.remove(\'open\')">Close</button>';
 }
