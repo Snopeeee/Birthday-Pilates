@@ -67,10 +67,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 26px;
+  gap: 8px;
   margin: 8px 0 14px;
 }
-.icons-row img { width: 36px; height: 36px; object-fit: contain; }
+.icons-row img { width: 32px; height: 32px; object-fit: contain; }
 .divider { border: none; border-top: 1px solid #8B1A1A; opacity: 0.25; margin: 8px 0; }
 .info-block { text-align: center; margin: 10px 0; }
 .info-label {
@@ -81,6 +81,7 @@ body {
   text-transform: uppercase;
   margin-bottom: 2px;
 }
+.icons-row img:nth-child(2) { width: 132px; height: 64px; }
 .info-val { font-size: 1rem; font-weight: 600; color: #8B1A1A; }
 .info-sub { font-size: 0.78rem; color: #8B1A1A; opacity: 0.75; line-height: 1.5; }
 .sparkle { display: inline-block; font-size: 12px; color: #8B1A1A; opacity: 0.5; }
