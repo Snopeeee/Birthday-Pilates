@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inah's Pilates Birthday Party</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Dancing+Script:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <div style="width:100%;max-width:420px;">
+    <div class="card">
+      <div class="stripes"></div>
+
+      <div class="inner">
+
+        <div class="ribbon-wrap">
+          <img src="ribbon (1).png" alt="" id="ribbon-img" />
+        </div>
+
+        <p class="subtitle">You're invited to</p>
+        <p class="name">Inah's</p>
+        <p class="pilates">PILATES</p>
+        <p class="bday">BIRTHDAY PARTY</p>
+
+        <div class="icons-row">
+          <img src="birthday-cake (1).png" alt="Cake Icon">
+          <img src="reformer (1).png" alt="Reformer Icon">
+          <img src="champagne (1).png" alt="Champagne Icon">
+        </div>
+
+        <hr class="divider"/>
+
+        <div class="info-block">
+          <p class="info-label">✦ when</p>
+          <p class="info-val">April 25, 2025</p>
+          <p class="info-sub">11:00 AM</p>
+        </div>
+
+        <hr class="divider"/>
+
+        <div class="info-block">
+          <p class="info-label">✦ where</p>
+          <p class="info-val">Move Iligan</p>
+          <p class="info-sub">
+            2nd Floor, JC Commercial Complex<br>
+            Aguinaldo Ext, Palao<br>
+            Iligan City, Lanao del Norte 9200
+          </p>
+        </div>
+
+        <hr class="divider"/>
+
+        <div class="info-block" style="margin-top:10px;">
+          <p style="font-size:0.85rem; color:#8B1A1A; font-weight:500;">
+            <span class="sparkle">✦</span> Free Drinks &amp; Snacks <span class="sparkle">✦</span>
+          </p>
+        </div>
+
+        <div class="dress-code">
+          <p class="dc-title">Dress Code — Activewear</p>
+          <p class="dc-sub">Any Shades Of:</p>
+          <div class="swatches">
+            <div class="swatch-wrap"><span class="swatch" style="background:#1a1a1a;"></span></div>
+            <div class="swatch-wrap"><span class="swatch" style="background:#c0392b;"></span></div>
+            <div class="swatch-wrap"><span class="swatch" style="background:#7B1F2E;"></span></div>
+            <div class="swatch-wrap"><span class="swatch" style="background:#fa2a55;"></span></div>
+          </div>
+          <p style="font-size:0.62rem; color:#fdf8f4; opacity:0.65; letter-spacing:0.1em; text-transform:uppercase; margin-top:6px;">
+            Black · Red · Maroon · Pink
+          </p>
+        </div>
+
+       
+
+        <button class="rsvp-btn" onclick="openModal()">♡ RSVP Here ♡</button>
+
+        <p style="text-align:center; font-size:0.7rem; color:#8B1A1A; opacity:0.5; font-style:italic;">With love, Inah</p>
+         <!-- Slots counter badge -->
+        <div class="slots-badge" id="slotsBadge">
+          <span>✦ 10 slots remaining</span>
+        </div>
+      </div>
+      
+
+      <div class="bottom-stripe"></div>
+    </div>
+  </div>
+
+  <!-- RSVP Modal -->
+  <div class="modal-bg" id="rsvpModal">
+    <div class="modal" id="modalContent">
+      <h3>RSVP</h3>
+      <p style="font-size:0.8rem; color:#8B1A1A; opacity:0.7; margin-bottom:14px;">Inah's Pilates Birthday Party · April 25</p>
+      <input type="text"  id="guestName"  placeholder="Your name" />
+      <input type="email" id="guestEmail" placeholder="Your email address" />
+      <select id="guestAttend">
+        <option value="">Will you be attending?</option>
+        <option value="yes">Yes, I'll be there! 🎉</option>
+        <option value="no">Sorry, can't make it</option>
+      </select>
+      <input type="text" id="guestNote" placeholder="A note for Inah (optional)" />
+      <div class="modal-btns">
+        <button class="btn-cancel" onclick="document.getElementById('rsvpModal').classList.remove('open')">Cancel</button>
+        <button class="btn-confirm" onclick="submitRSVP()">Confirm RSVP</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
